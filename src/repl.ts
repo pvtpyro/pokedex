@@ -17,10 +17,11 @@ export function startREPL(state: State) {
 
     const commandName = cleaned[0];
     const command = state.commands[commandName]
+    const args = cleaned.slice(1)
 
     if (command) {
       try {
-        await command.callback(state)
+        await command.callback(state, ...args)
       } catch (err) {
         console.log("error with callback")
       }
