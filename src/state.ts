@@ -6,6 +6,7 @@ import { commandMap } from "./commands/map.js";
 import { commandMapb } from "./commands/mapb.js";
 import { commandExplore } from "./commands/explore.js";
 import { commandCatch } from "./commands/catch.js";
+import { commandInspect } from "./commands/inspect.js";
 
 export type CLICommand = {
 	name: string;
@@ -59,6 +60,11 @@ export function initState(): State {
 			name: "catch",
 			description: "Catch a pokemon",
 			callback: commandCatch
+		},
+		inspect: {
+			name: "inspect",
+			description: "Inspect a pokemon",
+			callback: commandInspect
 		}
 	}
 
